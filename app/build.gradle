@@ -30,32 +30,5 @@ dependencies {
 //    from android.sourceSets.main.java.srcDirs
 //    classifier "sources"
 //}
+apply from: '../maven.gradle'
 
-afterEvaluate {
-    publishing {
-        publications {
-            common(MavenPublication) {
-                // Applies the component for the release build variant.
-                from components.release
-
-                // You can then customize attributes of the publication as shown below.
-                groupId = 'com.hisoybean.android'
-                artifactId = 'utilcode'
-                version = HBAConfig.versionName
-//                artifact generateSourcesJar
-            }
-        }
-        repositories {
-            maven {
-                def releasesRepoUrl = "http://127.0.0.1:8081/repository/maven-android-release/"
-                def snapshotsRepoUrl = "http://127.0.0.1:8081/repository/maven-android-snapshot/"
-
-                url = HBAConfig.versionName.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-                credentials {
-                    username = 'admin'
-                    password = 'admin'
-                }
-            }
-        }
-    }
-}

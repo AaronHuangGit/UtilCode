@@ -2,12 +2,12 @@ buildscript {
     ext.kotlin_version = "1.4.32"
     repositories {
         mavenLocal()
-        maven { url "http://127.0.0.1:8081/repository/maven-android-public/"}
+        maven { url "http://maven.championai.com/repository/maven-android-public/"}
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.hisoybean.android.plugin:HBAPlugin:1.0.1-SNAPSHOT"
+        classpath "com.hisoybean.android.plugin:HBAPlugin:1.0.2-SNAPSHOT"
     }
 }
 
@@ -15,7 +15,7 @@ allprojects {
     repositories {
 //        maven { url uri('../repo')}
         mavenLocal()
-        maven { url "http://127.0.0.1:8081/repository/maven-android-public/"}
+        maven { url "http://maven.championai.com/repository/maven-android-public/"}
     }
 }
 
